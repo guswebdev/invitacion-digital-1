@@ -45,11 +45,23 @@ hr {
 .header {
   width: 100%;
   min-height: 100vh;
-  background-color: black;
   color: white;
   background-image: url(../assets/img/bg-hero.jpeg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: -1;
+}
+
+.bg-black-opacity{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(34, 34, 34, 0.5);
+  z-index: -10;
 }
 
 .header .container {
