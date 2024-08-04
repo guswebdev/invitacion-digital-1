@@ -16,6 +16,19 @@ const $seconds = d.querySelector(`[data-seconds]`);
 const fecha = "5 aug 2024";
 //console.log(Date())
 
+const $headerTitle = d.querySelector(`[data-header-title]`);
+const $headerName = d.querySelector(`[data-header-nombre]`);
+const $headerDescription = d.querySelector(`[data-header-descripcion]`);
+const $img1 = d.querySelector(`[data-img-1]`);
+const $img2 = d.querySelector(`[data-img-2]`);
+const $img3 = d.querySelector(`[data-img-3]`);
+const $img4 = d.querySelector(`[data-img-4]`);
+const $contador = d.querySelector(`[data-contador]`);
+const $fecha = d.querySelector(`[data-fecha]`);
+const $informacion = d.querySelector(`[data-informacion]`);
+const $regalo = d.querySelector(`[data-regalo]`);
+const $asistencia = d.querySelector(`[data-asistencia]`);
+
 function countTimer() {
   const fechaEvento = new Date(fecha);
   const fechaActual = new Date();
@@ -41,9 +54,10 @@ d.addEventListener("click", (e) => {
     let texto = $alias.dataset.alias;
     console.log(texto);
     navigator.clipboard.writeText(texto);
-    $mensajeCopiado.classList.remove(`d-none`);
+    $mensajeCopiado.classList.remove("d-none");
+    $mensajeCopiado.style.animation = "desplazar-arriba 2s ease"
     setTimeout(() => {
-      $mensajeCopiado.classList.add(`d-none`);
+      $mensajeCopiado.classList.add("d-none");
     }, 2000);
   }
 
@@ -65,3 +79,67 @@ d.addEventListener("click", (e) => {
     $audio.pause();
   }
 });
+
+d.addEventListener("DOMContentLoaded", ()=>{
+  $btnPlay.style.animation = "escalar .75s ease-out"
+  $headerTitle.style.animation = "escalar 1s ease-out"
+  $headerName.style.animation = "escalar 1s ease-out"
+  $headerDescription.style.animation = "desplazar-abajo 1s ease-out"
+})
+
+window.addEventListener("scroll", (e)=>{
+  let posicionImg1 = $img1.getBoundingClientRect().top;
+  let posicionImg2 = $img2.getBoundingClientRect().top;
+  let posicionImg3 = $img3.getBoundingClientRect().top;
+  let posicionImg4 = $img4.getBoundingClientRect().top;
+  let posicionContador = $contador.getBoundingClientRect().top;
+  let posicionFecha = $fecha.getBoundingClientRect().top;
+  let posicionInformacion = $informacion.getBoundingClientRect().top;
+  let posicionRegalo = $regalo.getBoundingClientRect().top;
+  let posicionAsistencia = $asistencia.getBoundingClientRect().top;
+  
+  let tamañoPantalla = window.innerHeight/1.5;
+  
+  if(posicionImg1 < tamañoPantalla){
+    console.log("ANIMAR")
+    $img1.style.animation = "desplazar-izquierda-derecha 1s ease-out";
+    $img1.style.opacity=1;
+  }
+  if(posicionImg2 < tamañoPantalla){
+    console.log("ANIMAR")
+    $img2.style.animation = "desplazar-derecha-izquierda 1s ease-out";
+    $img2.style.opacity=1;
+  }
+  if(posicionImg3 < tamañoPantalla){
+    console.log("ANIMAR")
+    $img3.style.animation = "desplazar-izquierda-derecha 1s ease-out";
+    $img3.style.opacity=1;
+  }
+  if(posicionImg4 < tamañoPantalla){
+    console.log("ANIMAR")
+    $img4.style.animation = "desplazar-derecha-izquierda 1s ease-out";
+    $img4.style.opacity=1;
+  }
+  
+  if(posicionContador < tamañoPantalla){
+    $contador.style.animation = "escalar-2 1s ease-out";
+    $contador.style.opacity=1;
+  }
+  if(posicionFecha < tamañoPantalla){
+    $fecha.style.animation = "escalar-2 1s ease-out";
+    $fecha.style.opacity=1;
+  }
+  if(posicionInformacion < tamañoPantalla){
+    $informacion.style.animation = "escalar-2 1s ease-out";
+    $informacion.style.opacity=1;
+  }
+  if(posicionRegalo < tamañoPantalla){
+    $regalo.style.animation = "escalar-2 1s ease-out";
+    $regalo.style.opacity=1;
+  }
+  if(posicionAsistencia < tamañoPantalla){
+    $asistencia.style.animation = "escalar-2 1s ease-out";
+    $asistencia.style.opacity=1;
+  }
+
+})
