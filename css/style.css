@@ -1,0 +1,303 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+hr {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  background-image: url(../assets/img/bg-hero.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header .container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
+
+.btns {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.btns span {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.header h2 {
+  font-size: 4rem;
+  font-family: "Sacramento", cursive;
+}
+.header h3 {
+  font-size: 3rem;
+  font-family: "Sacramento", cursive;
+}
+
+.header p {
+  line-height: 1.5rem;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.header i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+}
+
+.container-img {
+  margin: 1rem 0;
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+  border: solid white thin;
+}
+
+.contador {
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contador > h3 {
+  font-size: 2rem;
+  font-family: "Sacramento", cursive;
+  word-spacing: 0.25rem;
+}
+
+.contador > p {
+  margin-bottom: -1rem;
+}
+
+.div-img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.grid-contador {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  width: 150px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    "t t t t t t t"
+    "nd p1 nh p2 nm p3 ns"
+    "td . th . tm . ts";
+  justify-content: center;
+  align-items: center;
+}
+
+.title-contador {
+  grid-area: t;
+}
+.num-dias {
+  grid-area: nd;
+}
+.puntos-1 {
+  grid-area: p1;
+}
+.num-hs {
+  grid-area: nh;
+}
+.puntos-2 {
+  grid-area: p2;
+}
+.num-min {
+  grid-area: nm;
+}
+.puntos-3 {
+  grid-area: p3;
+}
+.num-seg {
+  grid-area: ns;
+}
+.text-dias {
+  grid-area: td;
+}
+.text-hs {
+  grid-area: th;
+}
+.text-min {
+  grid-area: tm;
+}
+.text-seg {
+  grid-area: ts;
+}
+
+.grid-contador h3 {
+  font-size: 1.25rem;
+  font-family: "Sacramento", cursive;
+}
+
+.informacion {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.informacion h3 {
+  font-size: 2rem;
+  font-family: "Sacramento", cursive;
+}
+.informacion h4 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.informacion a {
+  display: block;
+  background-color: white;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+}
+
+.regalo {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.regalo h3 {
+  font-size: 2rem;
+  font-family: "Sacramento", cursive;
+}
+
+.regalo p {
+  line-height: 2rem;
+}
+.regalo h4 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.btns span {
+  transition: opacity 0.15s linear;
+}
+
+@keyframes Fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensaje-copiado {
+  color: #25d366;
+  font-weight: bold;
+}
+
+.asistencia {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.asistencia h3 {
+  font-size: 2rem;
+  font-family: "Sacramento", cursive;
+}
+
+.asistencia p {
+  line-height: 2rem;
+}
+
+.btn-contacto {
+  display: block;
+  background-color: #25d366;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.15rem;
+}
+
+.invitacion h2 {
+  font-size: 3rem;
+  font-family: "Sacramento", cursive;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 0.5rem;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarjeta de cumple</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <audio></audio>
+        <div class="btns">
+          <span>
+            <i class="fa-solid fa-circle-play" data-play></i>
+          </span>
+          <span class="d-none">
+            <i class="fa-solid fa-circle-pause" data-pause></i>
+          </span>
+        </div>
+        <p>¡Dale Play!</p>
+        <h3>Mis 15 años</h3>
+        <h2>Paloma</h2>
+        <p>
+          "Es un dia soñado y esperado, quiero compartir con vos esta noche
+          inolvidable"
+        </p>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <div class="container">
+        <article class="container-img">
+          <img src="assets/img/chica-1.webp" alt="" />
+        </article>
+        <hr />
+        <section class="contador">
+          <p>Fecha del evento:</p>
+          <h3>16 de noviembre, 2024</h3>
+          <div class="div-img">
+            <img src="assets/img/circulo-contador.webp" alt="" />
+            <article class="grid-contador">
+              <div class="title-contador">
+                <h3>¿Cuanto Falta?</h3>
+              </div>
+              <div class="num-dias" data-days>0</div>
+              <div class="puntos-1">:</div>
+              <div class="num-hs" data-hours>0</div>
+              <div class="puntos-2">:</div>
+              <div class="num-min" data-minutes>0</div>
+              <div class="puntos-3">:</div>
+              <div class="num-seg" data-seconds>0</div>
+              <div class="text-dias">dias</div>
+              <div class="text-hs">hs</div>
+              <div class="text-min">min</div>
+              <div class="text-seg">seg</div>
+            </article>
+          </div>
+        </section>
+        <hr />
+        <article class="container-img">
+          <img src="assets/img/chica-2.webp" alt="" />
+        </article>
+        <hr />
+        <section class="informacion">
+          <h3>Festejo</h3>
+          <article>
+            <h4>Lugar</h4>
+            <p>Estación Arcoiris</p>
+          </article>
+          <article>
+            <h4>Ubicacion</h4>
+            <p>Gonzalez Catan, La matanza</p>
+          </article>
+          <article>
+            <h4>Horario</h4>
+            <p>21:00 hs</p>
+          </article>
+          <article>
+            <h4>Vestimenta</h4>
+            <p>Elegante Sport</p>
+          </article>
+          <a
+            class="btn-informacion"
+            href="https://maps.app.goo.gl/6wHfs9d5zo8cqgPW6"
+            target="_blank"
+            >¿Como Llegar?</a
+          >
+        </section>
+        <hr />
+        <article class="container-img">
+          <img src="assets/img/chica-3.webp" alt="" />
+        </article>
+        <hr />
+        <section class="regalo">
+          <h3>Regalos</h3>
+          <p>
+            <strong>Mi mejor regalo</strong>, en este dia tan especial, es
+            <strong>tu presencia</strong>. Pero si deseas darme un regalo podes
+            ponerlo en un sobre o podes usar mi <strong>alias</strong>
+          </p>
+          <h4>
+            Alias:
+            <span data-alias="paloma.diaz.mp" data-id="alias"
+              >paloma.diaz.mp</span
+            >
+          </h4>
+          <span class="mensaje-copiado d-none" data-copiado
+            >¡Alias Copiado!</span
+          >
+        </section>
+        <hr />
+        <article class="container-img">
+          <img src="assets/img/chica-4.webp" alt="" />
+        </article>
+        <hr />
+        <section class="asistencia">
+          <h3>Confirma tu asistencia</h3>
+          <p>
+            Para mi es muy importante que confirmes esta invitacion, o que me
+            cuentes si no me puedes acompañar.
+          </p>
+          <a href="https://wa.link/wmn1yi" class="btn-contacto" target="_blank"
+            >WhatsApp</a
+          >
+        </section>
+        <section class="invitacion">
+          <h2>¡Los Espero!</h2>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>
+        &copy; <strong>2024 Gustavo Miño</strong> - Todos los derechos
+        reservados
+      </p>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
