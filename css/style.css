@@ -103,7 +103,7 @@ main {
 }
 
 .container-img {
-  margin: 1rem 0;
+  margin: 1rem auto;
   width: 300px;
   height: 350px;
   overflow: hidden;
