@@ -13,7 +13,8 @@ const $hours = d.querySelector(`[data-hours]`);
 const $min = d.querySelector(`[data-minutes]`);
 const $seconds = d.querySelector(`[data-seconds]`);
 
-const fecha = "5 aug 2024";
+//const fecha = "12 aug 2024";
+const fecha = new Date(2024, 10, 16, 21, 0, 0, 0);
 //console.log(Date())
 
 const $headerTitle = d.querySelector(`[data-header-title]`);
@@ -28,6 +29,8 @@ const $fecha = d.querySelector(`[data-fecha]`);
 const $informacion = d.querySelector(`[data-informacion]`);
 const $regalo = d.querySelector(`[data-regalo]`);
 const $asistencia = d.querySelector(`[data-asistencia]`);
+const $gridContador = d.querySelector(`[data-grid-contador]`);
+const $titleContador = d.querySelector(`[data-title-contador]`);
 
 function countTimer() {
   const fechaEvento = new Date(fecha);
@@ -44,12 +47,17 @@ function countTimer() {
   $hours.innerHTML = hoursCalc;
   $min.innerHTML = minsCalc;
   $seconds.innerHTML = secondsCalc;
+  if(daysCalc === 0 && hoursCalc === 0 && minsCalc === 0 && secondsCalc === 0){
+    console.log("LLEGO EL DIA");
+    clearInterval(intervalId)
+    $titleContador.innerHTML= `<h3 style="font-size: 1.5rem;">Llego el dia</h3>`
+  }
 }
 
-setInterval(countTimer, 1000);
+const intervalId = setInterval(countTimer, 1000);
 
 d.addEventListener("click", (e) => {
-  //console.log(e.target)
+  console.log(e.target)
   if (e.target === $alias) {
     let texto = $alias.dataset.alias;
     console.log(texto);

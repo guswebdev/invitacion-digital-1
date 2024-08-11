@@ -51,7 +51,7 @@ hr {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  z-index: -1;
+  
 }
 
 .bg-black-opacity{
@@ -61,10 +61,11 @@ hr {
   width: 100%;
   min-height: 100vh;
   background-color: rgba(34, 34, 34, 0.5);
-  z-index: -10;
+  z-index: 10;
 }
 
 .header .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -74,6 +75,7 @@ hr {
   justify-content: flex-end;
   padding: 0 0.5rem;
   text-align: center;
+  z-index: 20;
 }
 
 .btns {
