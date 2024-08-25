@@ -136,6 +136,11 @@ main {
   opacity: 0;
 }
 
+.foto-1,
+.foto-4 {
+  aspect-ratio: 1/2;
+}
+
 .contador {
   padding: 1rem 0;
   text-align: center;

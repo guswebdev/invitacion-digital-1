@@ -57,10 +57,10 @@ function countTimer() {
 const intervalId = setInterval(countTimer, 1000);
 
 d.addEventListener("click", (e) => {
-  console.log(e.target)
+  //console.log(e.target)
   if (e.target === $alias) {
     let texto = $alias.dataset.alias;
-    console.log(texto);
+    //console.log(texto);
     navigator.clipboard.writeText(texto);
     $mensajeCopiado.classList.remove("d-none");
     $mensajeCopiado.style.animation = "desplazar-arriba 2s ease"
@@ -70,7 +70,7 @@ d.addEventListener("click", (e) => {
   }
 
   if (e.target === $btnPlay) {
-    $audio.setAttribute("src", "assets/audio/La Original - Emilia, TINI.mp3");
+    $audio.setAttribute("src", "assets/audio/No se ve - Emilia, Ludmilla, Zecca.mp3");
 
     $audio.currentTime = tiempo;
     $audio.play();
@@ -109,22 +109,22 @@ window.addEventListener("scroll", (e)=>{
   let tamañoPantalla = window.innerHeight/1.5;
   
   if(posicionImg1 < tamañoPantalla){
-    console.log("ANIMAR")
+    //console.log("ANIMAR")
     $img1.style.animation = "desplazar-izquierda-derecha 1s ease-out";
     $img1.style.opacity=1;
   }
   if(posicionImg2 < tamañoPantalla){
-    console.log("ANIMAR")
+    //console.log("ANIMAR")
     $img2.style.animation = "desplazar-derecha-izquierda 1s ease-out";
     $img2.style.opacity=1;
   }
   if(posicionImg3 < tamañoPantalla){
-    console.log("ANIMAR")
+    //console.log("ANIMAR")
     $img3.style.animation = "desplazar-izquierda-derecha 1s ease-out";
     $img3.style.opacity=1;
   }
   if(posicionImg4 < tamañoPantalla){
-    console.log("ANIMAR")
+    //console.log("ANIMAR")
     $img4.style.animation = "desplazar-derecha-izquierda 1s ease-out";
     $img4.style.opacity=1;
   }
