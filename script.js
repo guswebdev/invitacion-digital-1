@@ -43,6 +43,16 @@ function countTimer() {
   const minsCalc = Math.floor(totalSeconds / 60) % 60;
   const secondsCalc = Math.floor(totalSeconds % 60);
 
+  
+  const seconds = secondsCalc.toString().split("");
+  //console.log(seconds)
+  //console.log(seconds.length)
+  if(seconds.length === 1){
+    let secDec = '0';
+    let secUni = seconds[0]
+    //console.log(secDec + secUni);
+  }
+
   $days.innerHTML = daysCalc;
   $hours.innerHTML = hoursCalc;
   $min.innerHTML = minsCalc;
