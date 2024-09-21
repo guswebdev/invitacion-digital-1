@@ -1,4 +1,8 @@
 const d = document;
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 const $alias = d.querySelector(`[data-alias]`);
 const $btnPlay = d.querySelector(`[data-play]`);
@@ -191,6 +195,7 @@ window.addEventListener("scroll", (e)=>{
     $fecha.style.opacity=1;
     $contadorTitle.style.opacity=1;
     $contadorTitleDos.style.opacity=1;
+    $gridContador.style.opacity=1;
   }
   /*if(posicionFecha < tamañoPantalla){
     $fecha.style.animation = "escalar-2 1s ease-out";
