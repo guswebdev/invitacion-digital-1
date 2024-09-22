@@ -1,8 +1,7 @@
 const d = document;
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+
 let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 const $alias = d.querySelector(`[data-alias]`);
 const $btnPlay = d.querySelector(`[data-play]`);
@@ -17,9 +16,7 @@ const $hours = d.querySelector(`[data-hours]`);
 const $min = d.querySelector(`[data-minutes]`);
 const $seconds = d.querySelector(`[data-seconds]`);
 
-//const fecha = "12 aug 2024";
 const fecha = new Date(2024, 10, 16, 21, 0, 0, 0);
-//console.log(Date())
 
 const $headerTitle = d.querySelector(`[data-header-title]`);
 const $headerName = d.querySelector(`[data-header-nombre]`);
@@ -32,7 +29,6 @@ const $contador = d.querySelector(`[data-contador]`);
 const $fecha = d.querySelector(`[data-fecha]`);
 const $contadorTitle = d.querySelector(`[data-contador-title]`);
 const $contadorTitleDos = d.querySelector(`[data-contador-title-2]`);
-//const $fecha = d.querySelector(`[data-fecha]`);
 const $informacion = d.querySelector(`[data-informacion]`);
 const $regalo = d.querySelector(`[data-regalo]`);
 const $asistencia = d.querySelector(`[data-asistencia]`);
@@ -40,24 +36,21 @@ const $gridContador = d.querySelector(`[data-grid-contador]`);
 const $titleContador = d.querySelector(`[data-title-contador]`);
 
 function countTimer() {
-
   //variables fecha
-  //const fecha = new Date(2024, 10, 16, 21, 0, 0, 0);
-  //const fecha = new Date(2024, 8, 21, 5, 52, 0, 0);
   const fechaEvento = new Date(fecha);
   const fechaActual = new Date();
 
   //variables DOM
-  const $decSegundos = document.querySelector(`[data-decSegundos]`)
-  const $uniSegundos = document.querySelector(`[data-uniSegundos]`)
-  const $decMinutos = document.querySelector(`[data-decMinutos]`)
-  const $uniMinutos = document.querySelector(`[data-uniMinutos]`)
-  const $decHoras = document.querySelector(`[data-decHoras]`)
-  const $uniHoras = document.querySelector(`[data-uniHoras]`)
-  const $cenDias = document.querySelector(`[data-cenDias]`)
-  const $decDias = document.querySelector(`[data-decDias]`)
-  const $uniDias = document.querySelector(`[data-uniDias]`)
-  const $titleContador = document.querySelector(`[data-contador-title]`)
+  const $decSegundos = document.querySelector(`[data-decSegundos]`);
+  const $uniSegundos = document.querySelector(`[data-uniSegundos]`);
+  const $decMinutos = document.querySelector(`[data-decMinutos]`);
+  const $uniMinutos = document.querySelector(`[data-uniMinutos]`);
+  const $decHoras = document.querySelector(`[data-decHoras]`);
+  const $uniHoras = document.querySelector(`[data-uniHoras]`);
+  const $cenDias = document.querySelector(`[data-cenDias]`);
+  const $decDias = document.querySelector(`[data-decDias]`);
+  const $uniDias = document.querySelector(`[data-uniDias]`);
+  const $titleContador = document.querySelector(`[data-contador-title]`);
 
   //variables y calculo de dias horas minutos y segundos
   const totalSeconds = (fechaEvento - fechaActual) / 1000;
@@ -66,14 +59,13 @@ function countTimer() {
   const hoursCalc = Math.floor(totalSeconds / 3600) % 24;
   const minsCalc = Math.floor(totalSeconds / 60) % 60;
   const secondsCalc = Math.floor(totalSeconds % 60);
-  
+
   //convertir en array la informacion
   const dias = daysCalc.toString().split("");
   const horas = hoursCalc.toString().split("");
   const minutos = minsCalc.toString().split("");
   const segundos = secondsCalc.toString().split("");
 
-  
   // validar los 2 digitos
   if (dias.length === 1) {
     dias.unshift("0");
@@ -92,16 +84,16 @@ function countTimer() {
     segundos.unshift("0");
   }
 
-  $decSegundos.innerHTML = segundos[0]
-  $uniSegundos.innerHTML = segundos[1]
-  $decMinutos.innerHTML = minutos[0]
-  $uniMinutos.innerHTML = minutos[1]
-  $decHoras.innerHTML = horas[0]
-  $uniHoras.innerHTML = horas[1]
-  $cenDias.innerHTML = dias[0]
-  $decDias.innerHTML = dias[1]
-  $uniDias.innerHTML = dias[2]
-  
+  $decSegundos.innerHTML = segundos[0];
+  $uniSegundos.innerHTML = segundos[1];
+  $decMinutos.innerHTML = minutos[0];
+  $uniMinutos.innerHTML = minutos[1];
+  $decHoras.innerHTML = horas[0];
+  $uniHoras.innerHTML = horas[1];
+  $cenDias.innerHTML = dias[0];
+  $decDias.innerHTML = dias[1];
+  $uniDias.innerHTML = dias[2];
+
   if (
     daysCalc === 0 &&
     hoursCalc === 0 &&
@@ -117,20 +109,21 @@ function countTimer() {
 const intervalId = setInterval(countTimer, 1000);
 
 d.addEventListener("click", (e) => {
-  //console.log(e.target)
   if (e.target === $alias) {
     let texto = $alias.dataset.alias;
-    //console.log(texto);
     navigator.clipboard.writeText(texto);
     $mensajeCopiado.classList.remove("d-none");
-    $mensajeCopiado.style.animation = "desplazar-arriba 2s ease"
+    $mensajeCopiado.style.animation = "desplazar-arriba 2s ease";
     setTimeout(() => {
       $mensajeCopiado.classList.add("d-none");
     }, 2000);
   }
 
   if (e.target === $btnPlay) {
-    $audio.setAttribute("src", "assets/audio/No se ve - Emilia, Ludmilla, Zecca.mp3");
+    $audio.setAttribute(
+      "src",
+      "assets/audio/No se ve - Emilia, Ludmilla, Zecca.mp3"
+    );
 
     $audio.currentTime = tiempo;
     $audio.play();
@@ -148,70 +141,60 @@ d.addEventListener("click", (e) => {
   }
 });
 
-d.addEventListener("DOMContentLoaded", ()=>{
-  $btnPlay.style.animation = "escalar .75s ease-out"
-  $headerTitle.style.animation = "escalar 1s ease-out"
-  $headerName.style.animation = "escalar 1s ease-out"
-  $headerDescription.style.animation = "desplazar-abajo 1s ease-out"
-})
+d.addEventListener("DOMContentLoaded", () => {
+  $btnPlay.style.animation = "escalar .75s ease-out";
+  $headerTitle.style.animation = "escalar 1s ease-out";
+  $headerName.style.animation = "escalar 1s ease-out";
+  $headerDescription.style.animation = "desplazar-abajo 1s ease-out";
+});
 
-window.addEventListener("scroll", (e)=>{
+window.addEventListener("scroll", (e) => {
   let posicionImg1 = $img1.getBoundingClientRect().top;
   let posicionImg2 = $img2.getBoundingClientRect().top;
   let posicionImg3 = $img3.getBoundingClientRect().top;
   let posicionImg4 = $img4.getBoundingClientRect().top;
   let posicionContador = $contador.getBoundingClientRect().top;
-  //let posicionFecha = $fecha.getBoundingClientRect().top;
   let posicionInformacion = $informacion.getBoundingClientRect().top;
   let posicionRegalo = $regalo.getBoundingClientRect().top;
   let posicionAsistencia = $asistencia.getBoundingClientRect().top;
-  
-  let tamañoPantalla = window.innerHeight/1.5;
-  
-  if(posicionImg1 < tamañoPantalla){
-    //console.log("ANIMAR")
+
+  let tamañoPantalla = window.innerHeight / 1.5;
+
+  if (posicionImg1 < tamañoPantalla) {
     $img1.style.animation = "desplazar-izquierda-derecha 1s ease-out";
-    $img1.style.opacity=1;
+    $img1.style.opacity = 1;
   }
-  if(posicionImg2 < tamañoPantalla){
-    //console.log("ANIMAR")
+  if (posicionImg2 < tamañoPantalla) {
     $img2.style.animation = "desplazar-derecha-izquierda 1s ease-out";
-    $img2.style.opacity=1;
+    $img2.style.opacity = 1;
   }
-  if(posicionImg3 < tamañoPantalla){
-    //console.log("ANIMAR")
+  if (posicionImg3 < tamañoPantalla) {
     $img3.style.animation = "desplazar-izquierda-derecha 1s ease-out";
-    $img3.style.opacity=1;
+    $img3.style.opacity = 1;
   }
-  if(posicionImg4 < tamañoPantalla){
-    //console.log("ANIMAR")
+  if (posicionImg4 < tamañoPantalla) {
     $img4.style.animation = "desplazar-derecha-izquierda 1s ease-out";
-    $img4.style.opacity=1;
-  }
-  
-  if(posicionContador < tamañoPantalla){
-    $contador.style.animation = "escalar-2 1s ease-out";
-    $contador.style.opacity=1;
-    $fecha.style.opacity=1;
-    $contadorTitle.style.opacity=1;
-    $contadorTitleDos.style.opacity=1;
-    $gridContador.style.opacity=1;
-  }
-  /*if(posicionFecha < tamañoPantalla){
-    $fecha.style.animation = "escalar-2 1s ease-out";
-    $fecha.style.opacity=1;
-  }*/
-  if(posicionInformacion < tamañoPantalla){
-    $informacion.style.animation = "escalar-2 1s ease-out";
-    $informacion.style.opacity=1;
-  }
-  if(posicionRegalo < tamañoPantalla){
-    $regalo.style.animation = "escalar-2 1s ease-out";
-    $regalo.style.opacity=1;
-  }
-  if(posicionAsistencia < tamañoPantalla){
-    $asistencia.style.animation = "escalar-2 1s ease-out";
-    $asistencia.style.opacity=1;
+    $img4.style.opacity = 1;
   }
 
-})
+  if (posicionContador < tamañoPantalla) {
+    $contador.style.animation = "escalar-2 1s ease-out";
+    $contador.style.opacity = 1;
+    $fecha.style.opacity = 1;
+    $contadorTitle.style.opacity = 1;
+    $contadorTitleDos.style.opacity = 1;
+    $gridContador.style.opacity = 1;
+  }
+  if (posicionInformacion < tamañoPantalla) {
+    $informacion.style.animation = "escalar-2 1s ease-out";
+    $informacion.style.opacity = 1;
+  }
+  if (posicionRegalo < tamañoPantalla) {
+    $regalo.style.animation = "escalar-2 1s ease-out";
+    $regalo.style.opacity = 1;
+  }
+  if (posicionAsistencia < tamañoPantalla) {
+    $asistencia.style.animation = "escalar-2 1s ease-out";
+    $asistencia.style.opacity = 1;
+  }
+});
